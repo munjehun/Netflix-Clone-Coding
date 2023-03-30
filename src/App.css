@@ -1,0 +1,10 @@
+.nav-item {
+  color: white;
+  text-decoration: none;
+  transition: color 150ms ease-in-out;
+  margin-right: 15px;
+}
+
+.nav-item:hover {
+  color: red;
+}
