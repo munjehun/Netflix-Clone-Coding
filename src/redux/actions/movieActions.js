@@ -19,11 +19,15 @@ function getMovies() {
       topRatedMovieApi,
       upcomingMovieApi,
     ]);
-    console.log('Promise all 후에 받는 data : ', [
-      popularMovies,
-      topRatedMovies,
-      upcomingMovies,
-    ]);
+
+    dispatch({
+      type: 'GET_MOVIE_SUCCESS',
+      payload: {
+        popularMovies: popularMovies.data,
+        topRatedMovies: topRatedMovies.data,
+        upcomingMovies: upcomingMovies.data,
+      },
+    });
   };
 }
 
