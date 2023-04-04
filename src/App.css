@@ -1,3 +1,8 @@
+body {
+  background-color: black;
+  color: white;
+}
+
 .nav-item {
   color: white;
   text-decoration: none;
@@ -18,7 +23,7 @@
   align-items: center;
   position: relative;
 }
-.banner::before {
+.banner::after {
   position: absolute;
   left: 0;
   top: 0;
@@ -33,7 +38,6 @@
   width: 800px;
   margin-left: 20px;
   z-index: 1;
-  color: antiquewhite;
 }
 .banner-info h1 {
   font-size: 4em;
