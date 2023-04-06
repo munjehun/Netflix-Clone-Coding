@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://api.themoviedb.org/3/movie', //앞에 기본으로 설정할 API 일부를 설정해 줄 수 있다.
+  baseURL: 'https://api.themoviedb.org/3', //앞에 기본으로 설정할 API 일부를 설정해 줄 수 있다.
   headers: { 'Content-type': 'application/json' },
 });
 
