@@ -8,20 +8,25 @@ function getMovies() {
       dispatch({ type: 'GET_MOVIE_REQUEST' });
 
       const popularMovieApi = api.get(
-        `/popular?api_key=${API_KEY}&language=en-US&page=1`
+        `/movie/popular?api_key=${API_KEY}&language=en-US&page=1`
       );
       const topRatedMovieApi = api.get(
-        `/top_rated?api_key=${API_KEY}&language=en-US&page=1`
+        `/movie/top_rated?api_key=${API_KEY}&language=en-US&page=1`
       );
       const upcomingMovieApi = api.get(
-        `/upcoming?api_key=${API_KEY}&language=en-US&page=1`
+        `/movie/upcoming?api_key=${API_KEY}&language=en-US&page=1`
+      );
+      const genreAPI = api.get(
+        `genre/movie/list?api_key=${API_KEY}&language=en-US`
       );
 
-      let [popularMovies, topRatedMovies, upcomingMovies] = await Promise.all([
-        popularMovieApi,
-        topRatedMovieApi,
-        upcomingMovieApi,
-      ]);
+      let [popularMovies, topRatedMovies, upcomingMovies, genreList] =
+        await Promise.all([
+          popularMovieApi,
+          topRatedMovieApi,
+          upcomingMovieApi,
+          genreAPI,
+        ]);
 
       dispatch({
         type: 'GET_MOVIE_SUCCESS',
@@ -29,6 +34,7 @@ function getMovies() {
           popularMovies: popularMovies.data,
           topRatedMovies: topRatedMovies.data,
           upcomingMovies: upcomingMovies.data,
+          genreList: genreList.data.genres,
         },
       });
     } catch (error) {
