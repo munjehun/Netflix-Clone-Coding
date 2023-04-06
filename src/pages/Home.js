@@ -16,7 +16,7 @@ function Home() {
   }, []);
 
   return !loading ? (
-    <div>
+    <div className="home">
       <Banner popularMovie={popularMovies.results[0]} />
       <h1>Popular Movies</h1>
       <MovieSlide movies={popularMovies} />
