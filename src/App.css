@@ -58,9 +58,6 @@ body {
   background-position: center center;
   text-decoration: none;
 }
-.movieCard:hover {
-  transform: scale(1.2);
-}
 .movieCard:hover .movieCard-info {
   opacity: 1;
 }
