@@ -1,0 +1,32 @@
+.movieCard {
+  width: auto;
+  height: 200px;
+  display: block;
+  background-size: auto 100%;
+  background-position: center center;
+  text-decoration: none;
+}
+.movieCard:hover .movieCard-info {
+  opacity: 1;
+}
+.movieCard-info {
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.659);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 200ms ease-in-out;
+}
+.movieCard-info-title {
+  font-size: 30px;
+  color: white;
+}
+.movieCard-info-detail {
+  font-size: 15px;
+}
+.movieCard-info-genres > span {
+  margin-right: 2px;
+}

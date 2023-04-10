@@ -314,6 +314,11 @@ template {
   box-sizing: border-box;
 }
 
+body {
+  background-color: black;
+  color: white;
+}
+
 h1 {
   margin: 0;
 }
@@ -340,4 +345,92 @@ ol,
 ul {
   list-style: none;
   padding-left: 0;
+}
+
+.home {
+  margin-bottom: 50px;
+}
+
+.nav-item {
+  color: white;
+  text-decoration: none;
+  transition: color 150ms ease-in-out;
+  margin-right: 15px;
+}
+
+.nav-item:hover {
+  color: red;
+}
+
+.banner {
+  width: 100%;
+  height: 70vh;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.banner::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 70vh;
+  content: "";
+  background: linear-gradient(to right, black, transparent);
+  opacity: 0.9;
+}
+
+.banner-info {
+  width: 800px;
+  margin-left: 20px;
+  z-index: 1;
+}
+
+.banner-info h1 {
+  font-size: 4em;
+}
+
+.banner-info p {
+  font-size: 1.2em;
+}
+
+.movieCard {
+  width: auto;
+  height: 200px;
+  display: block;
+  background-size: auto 100%;
+  background-position: center center;
+  text-decoration: none;
+}
+
+.movieCard:hover .movieCard-info {
+  opacity: 1;
+}
+
+.movieCard-info {
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.659);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 200ms ease-in-out;
+}
+
+.movieCard-info-title {
+  font-size: 30px;
+  color: white;
+}
+
+.movieCard-info-detail {
+  font-size: 15px;
+}
+
+.movieCard-info-genres > span {
+  margin-right: 2px;
 }
