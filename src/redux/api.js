@@ -19,19 +19,19 @@ const api = axios.create({
 // );
 
 // response 인터셉터
-api.interceptors.response.use(
-  function (response) {
-    // response 데이터 활용
-    console.log('get response : ', response);
+// api.interceptors.response.use(
+//   function (response) {
+//     // response 데이터 활용
+//     console.log('get response : ', response);
 
-    return response;
-  },
-  function (error) {
-    // response 에러났을 때
-    console.log('response error: ', error);
+//     return response;
+//   },
+//   function (error) {
+//     // response 에러났을 때
+//     console.log('response error: ', error);
 
-    return Promise.reject(error);
-  }
-);
+//     return Promise.reject(error);
+//   }
+// );
 
 export default api;
