@@ -1,13 +1,14 @@
 import React from 'react';
 import Badge from 'react-bootstrap/Badge';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 function MovieCard({ movie }) {
   const { genreList } = useSelector((state) => state.movie);
 
   return (
-    <a
-      href="/"
+    <Link
+      to={`/movies/${movie.id}`}
       className="movieCard"
       style={{
         backgroundImage: `url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/${movie.poster_path})`,
@@ -17,7 +18,7 @@ function MovieCard({ movie }) {
         <h1 className="movieCard-info-title">{movie.title}</h1>
         <div className="movieCard-info-detail">
           <div className="movieCard-info-average">
-            <Badge bg="danger">{movie.vote_average}</Badge>
+            <Badge bg="danger">★ {movie.vote_average}</Badge>
           </div>
           <div className="movieCard-info-genres">
             {movie.genre_ids.map((id) => (
@@ -31,7 +32,7 @@ function MovieCard({ movie }) {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }
 
