@@ -1,8 +1,18 @@
+//base
 @import './base/normalize';
 @import './base/reset';
 
-@import './pages/home';
+// constants
+@import './constants/colors';
 
+//mixins
+@import './mixins/flexbox';
+
+//components
 @import './components/navigation';
 @import './components/banner';
 @import './components/movie-card';
+
+//pages
+@import './pages/home';
+@import './pages/detail';
